@@ -6,7 +6,7 @@
 # Returns output of this operation
 
 a=int(input("Enter number 1 : "))
-o=int(input("Enter operator : "))
+o=(input("Enter operator : "))
 b=int(input("Enter number 2 : "))
 
 if o[0] in [ '+','-','*','/' ]:
@@ -17,7 +17,11 @@ if o[0] in [ '+','-','*','/' ]:
     elif o[0] == '*':
         out = a * b
     elif o[0] == '/':
-        out = a//b
+        if b==0:
+            out = "Divide by zero error, enter other number"
+        else:
+            out = a//b
+        
     print("Output : ",out)
 else:
     print("Error : Invalid Operator")
