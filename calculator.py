@@ -18,6 +18,8 @@ if o[0] in [ '+','-','*','/' ]:
         out = a * b
     elif o[0] == '/':
         out = a//b
+    elif o[0] == '%':
+        out = a%b
     print("Output : ",out)
 else:
     print("Error : Invalid Operator")
