@@ -11,7 +11,7 @@ b=int(input("Enter number 2 : "))
 if b==0:
     print("Error: division by zero error")
 
-elif o[0] in [ '+','-','*','/']:
+elif o[0] in [ '+','-','*','/', '%', '^']:
     if o[0] == '+':
         out = a + b
     elif o[0] == '-':
@@ -20,6 +20,10 @@ elif o[0] in [ '+','-','*','/']:
         out = a * b
     elif o[0] == '/':
         out = a//b
+    elif o[0] == '%':
+        out = a%b
+    elif o[0] == '^':
+        out = pow(a,b)
     print("Output : ",out)
 else:
     print("Error : Invalid Operator")
