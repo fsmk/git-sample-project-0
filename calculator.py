@@ -12,6 +12,7 @@ if b==0:
     print("Error: division by zero error")
 
 elif o[0] in [ '+','-','*','/', '%', '^']:
+
     if o[0] == '+':
         out = a + b
     elif o[0] == '-':
