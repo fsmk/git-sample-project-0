@@ -1,23 +1,36 @@
-#
-# calculator.py 
-#
+# calculator.py
 
-# Asks user for 2 operands and 1 operator
-# Returns output of this operation
+# Asks the user for 2 operands and 1 operator
+# Returns the output of this operation
 
-a=input("Enter number 1 : ")
-o=input("Enter operator : ")
-b=input("Enter number 2 : ")
+a = int(input("Enter number 1: "))
+o = input("Enter operator: ")
+b = int(input("Enter number 2: "))
 
-if o[0] in [ '+','-','*','/' ]:
-    if o[0] == '+':
+out = None  # Initialize the out variable
+
+if o in ['+', '-', '*', '/', '%', '**']:
+    if o == '+':
         out = a + b
-    elif o[0] == '-':
+    elif o == '-':
         out = a - b
-    elif o[0] == '*':
+    elif o == '*':
         out = a * b
-    elif o[0] == '/':
-        out = a//b
-    print("Output : ",out)
+    elif o == '/':
+        if b == 0:
+            print('Division by zero error.')
+        else:
+            out = a / b  # Use "/" for floating-point division
+    elif o == '%':
+        if b == 0:
+            print('Division by zero error.')
+        else:
+            out = a % b
+    elif o == '**':
+        out = a ** b  # Use "**" for exponentiation
+
+if out is not None:
+    print("Output:", out)
 else:
-    print("Error : Invalid Operator")
+    print("Error: Invalid Operator")
+
