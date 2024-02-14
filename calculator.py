@@ -1,15 +1,12 @@
-#
-# calculator.py 
-#
+a = input("Enter number 1: ")
+o = input("Enter operator: ")
+b = input("Enter number 2: ")
 
-# Asks user for 2 operands and 1 operator
-# Returns output of this operation
+# Convert inputs to float
+a = float(a)
+b = float(b)
 
-a=input("Enter number 1 : ")
-o=input("Enter operator : ")
-b=input("Enter number 2 : ")
-
-if o[0] in [ '+','-','*','/' ]:
+if o[0] in ['+', '-', '*', '/', '%', '^']:  # Add support for modulus (%) and exponent (^)
     if o[0] == '+':
         out = a + b
     elif o[0] == '-':
@@ -17,7 +14,15 @@ if o[0] in [ '+','-','*','/' ]:
     elif o[0] == '*':
         out = a * b
     elif o[0] == '/':
-        out = a//b
-    print("Output : ",out)
+        if b != 0:  # Check for divide by zero
+            out = a / b
+        else:
+            print("Error: Division by zero")
+            exit()  # Exit program if divide by zero occurs
+    elif o[0] == '%':
+        out = a % b
+    elif o[0] == '^':
+        out = a ** b
+    print("Output:", out)
 else:
-    print("Error : Invalid Operator")
+    print("Error: Invalid Operator")
