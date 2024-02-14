@@ -9,7 +9,7 @@ a=int(input("Enter number 1 : "))
 o=input("Enter operator : ")
 b=int(input("Enter number 2 : "))
 
-if o[0] in [ '+','-','*','/' ]:
+if o[0] in [ '+','-','*','/', '%', '^' ]:
     if o[0] == '+':
         out = a + b
     elif o[0] == '-':
@@ -21,6 +21,10 @@ if o[0] in [ '+','-','*','/' ]:
             print("Error : Division by zero")
             exit()
         out = a//b
+    elif o[0] == '%':
+        out = a % b
+    elif o[0] == '^':
+        out = a ** b
     print("Output : ",out)
 else:
     print("Error : Invalid Operator")
