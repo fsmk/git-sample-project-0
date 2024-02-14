@@ -17,7 +17,11 @@ if o[0] in [ '+','-','*','/' ]:
     elif o[0] == '*':
         out = a * b
     elif o[0] == '/':
-        out = a / b
+        if a==0 :
+            print("ERROR NO DIVISION BY ZERO");
+            exit()
+            out = a / b
+        
     print("Output : ",out)
 else:
     print("Error : Invalid Operator")
