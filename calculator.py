@@ -10,14 +10,18 @@ o=input("Enter operator : ")
 b=int(input("Enter number 2 : "))
 
 if o[0] in [ '+','-','*','/' ]:
-    if o[0] == '+':
-        out = a + b
-    elif o[0] == '-':
-        out = a - b
-    elif o[0] == '*':
-        out = a * b
-    elif o[0] == '/':
-        out = a//b
-    print("Output : ",out)
-else:
-    print("Error : Invalid Operator")
+	if o[0] == '+':
+		out = a + b
+	elif o[0] == '-':
+		out = a - b
+	elif o[0] == '*':
+		out = a * b
+	elif o[0] == '/':
+		if b==0:
+			out="divide by zero error"
+		else:
+			out = a/b
+	
+	else:
+		print("Error : Invalid Operator")
+	print("Output : ",out)
